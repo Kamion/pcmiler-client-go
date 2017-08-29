@@ -37,8 +37,8 @@ This is an __UNOFFICIAL__ client for [PCMiler](https://www.pcmiler.com/) REST we
 
 #### Map Images
 - [ ] Map Tile
-- [ ] Single Map
-- [ ] Map Route
+- [x] Single Map
+- [x] Map Route
 - [ ] Overlay Tile
 
 #### Weather Events
