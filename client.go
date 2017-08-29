@@ -3,9 +3,7 @@ package pcmiler
 import (
 	"io"
 	"io/ioutil"
-	"log"
 	"net/http"
-	"net/http/httputil"
 )
 
 type Client struct {
@@ -30,12 +28,12 @@ func (c *Client) request(method, url string, body io.Reader) ([]byte, error) {
 	req.Header.Set("Content-Type", "application/json")
 
 	// todo: hide debug information once I'm done
-	dump, err := httputil.DumpRequest(req, true)
-	if err != nil {
-		return nil, err
-	}
+	// dump, err := httputil.DumpRequest(req, true)
+	// if err != nil {
+	// 	return nil, err
+	// }
 
-	log.Println(string(dump))
+	// log.Println(string(dump))
 
 	res, err := client.Do(req)
 	if err != nil {
