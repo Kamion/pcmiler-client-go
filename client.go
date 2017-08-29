@@ -9,20 +9,13 @@ import (
 )
 
 type Client struct {
-	APIKey  string
-	Dataset string
+	APIKey string
 }
 
 // New instantiates new PCMiler client with your API key and optional dataset, defaults to Current
-func New(key string, dataset ...string) *Client {
-	ds := "Current"
-	if len(dataset) > 0 {
-		ds = dataset[0]
-	}
-
+func New(key string) *Client {
 	return &Client{
-		APIKey:  key,
-		Dataset: ds,
+		APIKey: key,
 	}
 }
 
