@@ -1,5 +1,5 @@
 # PCMiler client for Go
-This is an *UNOFFICIAL* client for [PCMiler](https://www.pcmiler.com/) REST web services, currently supported version 1.0
+This is an __UNOFFICIAL__ client for [PCMiler](https://www.pcmiler.com/) REST web services, currently supported version 1.0
 
 ## Features
 

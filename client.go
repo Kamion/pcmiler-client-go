@@ -30,7 +30,7 @@ func (c *Client) request(method, url string, body io.Reader) ([]byte, error) {
 	req.Header.Set("Content-Type", "application/json")
 
 	// todo: hide debug information once I'm done
-	dump, err := httputil.DumpRequest(req, false)
+	dump, err := httputil.DumpRequest(req, true)
 	if err != nil {
 		return nil, err
 	}
