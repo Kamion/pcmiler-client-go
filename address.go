@@ -1,5 +1,9 @@
 package pcmiler
 
+import (
+	"fmt"
+)
+
 type Address struct {
 	StreetAddress       string `json:"StreetAddress"`
 	City                string `json:"City"`
@@ -10,4 +14,9 @@ type Address struct {
 	SPLC                string `json:"SPLC"`
 	CountryPostalFilter int    `json:"CountryPostalFilter"`
 	AbbreviationFormat  int    `json:"AbbreviationFormat"`
+}
+
+func (a Address) String() string {
+	return fmt.Sprintf("%s, %s, %s, %s", a.StreetAddress,
+		a.City, a.State, a.Country)
 }
