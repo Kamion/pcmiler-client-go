@@ -54,7 +54,7 @@ func (c *Client) Geocode(request GeocodeRequest) ([]GeocodeResponse, error) {
 	url := "locations?" + v.Encode()
 
 	if request.Coords.Lat != "" && request.Coords.Lon != "" {
-		url += fmt.Sprintf("&coords=%s,%s", request.Coords.Lat, request.Coords.Lon)
+		url += fmt.Sprintf("&coords=%s,%s", request.Coords.Lon, request.Coords.Lat)
 	}
 
 	body, err := c.request(http.MethodGet, url, nil)
