@@ -1,5 +1,51 @@
 package pcmiler
 
+// Map.Style
+// Default		0	Indicates the default map style.
+// Classic		1	Indicates a classic motif style.
+// Monochrome	2	Indicates a monochrome style.
+// RoadAtlas	3	Indicates a style that mimics a road atlas look and feel.
+// Darkness		4	Indicates a dark style.
+// Modern		5	Indicates a modern style.
+// Contemporary	6	Indicates a contemporary style.
+// Night		7	Indicates a style optimized for night viewing.
+// Satelite		8	Indicates the style for satellite imagery.
+// Lightness	9	Indicates the style for lightness style.
+// Smooth		10	Indicates the style for smooth style.
+// Terrain		11	Indicates the style of terrain imagery.
+
+// Map.Drawers
+// Airport					0	Indicates a airports.
+// AvoidFavor				1	Indicates that avoids and favors should be shown on the map.
+// City						2	Indicates cities.
+// CityLarge				3	Indicates large cities.
+// CommerciallyProhibited	4	Indicates commercially prohibited roads.
+// CountryBoundaries		5	Indicates country boundaries.
+// CountyBoundaries			6	Indicates county boundaries.
+// HazMat					7	Indicates hazardous material restrictions.
+// Land						8	Indicates land masses and in general this should always be included.
+// LinkLabel				9	Indicates road names.
+// MilitarBases				10	Indicates military bases.
+// Network					11	Indicates roads.
+// Ortholmage				12	Indicates satellite imagery.
+// Parks					13	Indicates parks.
+// Place					14	Indicates points of interest.
+// PointDrawerWeb			15	Indicates user supplied points.
+// Railroads				16	Indicates rail roads.
+// Route					17	Indicates user supplied routes.
+// Shield					18	Indicates road shields.
+// ShieldInterstate			19	Indicates interstate road shields.
+// StaaDesignation			20	Indicates truck designations.
+// StateBoundaries			21	Indicates state and country boundaries.
+// Stop						22	Indicates the name of stops along a route.
+// TimeZone					23	Indicates time zone dividers.
+// TruckRestrictions		24	Indicates truck restrictions.
+// UrbanAreas				25	Indicates urban areas.
+// Water					26	Indicates Water bodies such as oceans, lakes, river, etc.
+// ExitLabel				27	Indicates exit labels for roads.
+// PolygonLabel				28	Indicates polygon labels.
+// Edge						29	Shows supertile edges - debugging only.
+
 type Map struct {
 	Viewport       Viewport   `json:"Viewport"`
 	Projection     int        `json:"Projection"`
@@ -16,7 +62,7 @@ type Map struct {
 type Route struct {
 	RouteID         string          `json:"RouteId"`
 	Stops           []StopLocation  `json:"Stops"`
-	Options         Options         `json:"Options"`
+	Options         *Options        `json:"Options"`
 	FuelOptions     *FuelOptions    `json:"FuelOptions"`
 	DrawLeastCost   bool            `json:"DrawLeastCost"`
 	RouteLegOptions RouteLegOptions `json:"RouteLegOptions"`
@@ -28,7 +74,7 @@ type Options struct {
 	BordersOpen        bool         `json:"BordersOpen"`
 	ClassOverrides     int          `json:"ClassOverrides"`
 	DistanceUnits      int          `json:"DistanceUnits"`
-	ElevLimit          int          `json:"ElevLimit"`
+	ElevLimit          int          `json:"ElevLimit,omitempty"`
 	FerryDiscourage    bool         `json:"FerryDiscourage"`
 	FuelRoute          bool         `json:"FuelRoute"`
 	HazMatType         int          `json:"HazMatType"`
