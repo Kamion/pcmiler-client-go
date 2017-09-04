@@ -25,7 +25,7 @@ This is an __UNOFFICIAL__ client for [PCMiler](https://www.pcmiler.com/) REST we
 
 #### Route Services
 - [ ] Derived Route
-- [ ] Route Path
+- [x] Route Path
 - [ ] Route Matrix
 - [ ] Drive Time Polygon
 - [ ] Post Route Path
