@@ -47,16 +47,16 @@ package pcmiler
 // Edge						29	Shows supertile edges - debugging only.
 
 type Map struct {
-	Viewport       Viewport   `json:"Viewport"`
-	Projection     int        `json:"Projection"`
-	Style          int        `json:"Style"`
-	ImageOption    int        `json:"ImageOption"`
-	Width          int        `json:"Width"`
-	Height         int        `json:"Height"`
-	Drawers        []int      `json:"Drawers"`
-	LegendDrawer   []Legend   `json:"LegendDrawer"`
-	GeometryDrawer []Geometry `json:"GeometryDrawer"`
-	PinDrawer      PinDrawer  `json:"PinDrawer"`
+	Viewport       Viewport             `json:"Viewport"`
+	Projection     int                  `json:"Projection"`
+	Style          int                  `json:"Style"`
+	ImageOption    int                  `json:"ImageOption"`
+	Width          int                  `json:"Width"`
+	Height         int                  `json:"Height"`
+	Drawers        []int                `json:"Drawers"`
+	LegendDrawer   []Legend             `json:"LegendDrawer"`
+	GeometryDrawer []GeometryDrawerItem `json:"GeometryDrawer"`
+	PinDrawer      PinDrawer            `json:"PinDrawer"`
 }
 
 type Route struct {
@@ -108,7 +108,7 @@ type Legend struct {
 	Type      int  `json:"Type"`
 }
 
-type Geometry struct {
+type GeometryDrawerItem struct {
 	Color []RGB `json:"Color"`
 }
 
