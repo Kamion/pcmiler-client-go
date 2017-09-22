@@ -28,11 +28,7 @@ func (c *Client) request(method, url string, body io.Reader) ([]byte, error) {
 	req.Header.Set("Content-Type", "application/json")
 
 	// todo: hide debug information once I'm done
-	// dump, err := httputil.DumpRequest(req, true)
-	// if err != nil {
-	// 	return nil, err
-	// }
-
+	// dump, _ := httputil.DumpRequest(req, true)
 	// log.Println(string(dump))
 
 	res, err := client.Do(req)
@@ -41,6 +37,9 @@ func (c *Client) request(method, url string, body io.Reader) ([]byte, error) {
 	}
 
 	defer res.Body.Close()
+
+	// dump, _ := httputil.DumpResponse(res, true)
+	// log.Println(string(dump))
 
 	return ioutil.ReadAll(res.Body)
 }

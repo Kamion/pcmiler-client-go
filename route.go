@@ -3,6 +3,7 @@ package pcmiler
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/Kamion/go-querystring/query"
@@ -73,6 +74,7 @@ func (c *Client) RoutePath(request RouteRequest) (RouteResponse, error) {
 
 	err = json.Unmarshal(response, &result)
 	if err != nil {
+		log.Println(string(response))
 		return result, err
 	}
 
