@@ -80,3 +80,7 @@ func (c *Client) RoutePath(request RouteRequest) (RouteResponse, error) {
 
 	return result, nil
 }
+
+func (r *RouteRequest) AddStop(stop Coordinates) {
+	r.Stops = append(r.Stops, stop)
+}
