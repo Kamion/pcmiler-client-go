@@ -37,10 +37,11 @@ type RouteRequest struct {
 }
 
 type RouteResponse struct {
-	Type      string   `json:"type"`
-	Geometry  Geometry `json:"geometry"`
-	TMinutes  int      `json:"TMinutes"`
-	TDistance float64  `json:"TDistance"`
+	Type       string      `json:"type"`
+	Geometry   Geometry    `json:"geometry"`
+	TMinutes   int         `json:"TMinutes"`
+	TDistance  float64     `json:"TDistance"`
+	Properties interface{} `json:"properties"`
 }
 
 type Geometry struct {
